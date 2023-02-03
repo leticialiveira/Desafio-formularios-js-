@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="./questions.json"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="title"> Informe o Titulo:</label>
+    <input type="text" id="title" />
+
+    <label for="description"> Descrição:</label>
+    <input type="text" id="description" />
+    <button id="submitButton">PESQUISAR</button>
+<!--  adiconou um input, pra colocar as informações dos dados,label pra colocar o que voce quer adicionar e button pra ter um botão que envia os dados  -->
+    <h1> Title</h1>
+    <span id="result"></span>
+  </body>
+  <script>
+    const arquivo = document.getElementById("resultado");
+    const titleInput = document.getElementById("title");
+    const descriptionInput = document.getElementById("description");
+    const submitButton = document.getElementById("submitButton");
+    const noHtml = document.getElementById("nomeTitle")
+// o .getElementById serve pra remeter algo que ja utulizou, no caso esta se referindo ao nome dos inputs 
+    
+    submitButton.addEventListener("click", function () {
+// ta direcionando pra onde vai o que a pessoa digitou no input ( nesse caso vai comparar o que ela enviou com question.json)
+      fetch("./questions.json")
+      //chama o arquivo
+      .then((response) => response.json())
+      .then((json) => {
+        const resultado = json;
+        // a variavel esta pegando todos os dados do arquivo json
+        const result = resultado.filter((item) => {
+          //usando a função filtro pra pegar um determinado tipo de item
+          return (
+            //retornando todos os itens de resultado(json)
+            item.title.toUpperCase().includes(titleInput.value.toUpperCase()) ||
+            item.description.toUpperCase().includes(descriptionInput.value.toUpperCase()) 
+            item.toUpperCase().includes(nomeTitle.value.toUpperCase())
+            // primeiro ele pegou o item titulo (pegando todos os titulos), pediu pra ficar tudo maisculo, esta pegando o valor do input 
+            //e dizendo pra tbm ficar maiusculo ( coisa que vai ignorar caso vc digite um valor minusculo e não seja o mesmo). o || 
+            // significa 'or' e vai servir pra caso um funcione, ele nao vai depender do outro pra funcionar( coisa que seria necessaria no && )
+            );
+        });
+        console.log(result);
+        
+
+        //o console.log esta no result pois é justamente onde esta filtrando o join.
+      });
+    });
+    </script>
+    
+</html>

@@ -1,0 +1,761 @@
+[
+  {
+    "title": "B1 - P1 - Qual o nome deste jogo?",
+    "description": "HypeGAMES - SNostalgia - B1 - P1",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Bomber Man",
+        "isValid": false
+      },
+      {
+        "name": "Mario Bros",
+        "isValid": false
+      },
+      {
+        "name": "Super Mario World",
+        "isValid": true
+      },
+      {
+        "name": "Mario Kart",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B1 - P2 - Qual o nome deste jogo?",
+    "description": "HypeGAMES - SNostalgia - B1 - P2",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Street Lutas",
+        "isValid": false
+      },
+      {
+        "name": "Dragon Ball Z",
+        "isValid": false
+      },
+      {
+        "name": "Mortal Kombat",
+        "isValid": false
+      },
+      {
+        "name": "Street Fighter 2",
+        "isValid": true
+      }
+    ]
+  },
+  {
+    "title": "B1 - P3 - Qual o nome deste jogo?",
+    "description": "HypeGAMES - SNostalgia - B1 - P3",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Need For Speed Underground 2",
+        "isValid": true
+      },
+      {
+        "name": "GTA Online",
+        "isValid": false
+      },
+      {
+        "name": "Most Wanted",
+        "isValid": false
+      },
+      {
+        "name": "Speed Bikes",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B1 - P4 - Qual o nome deste jogo?",
+    "description": "HypeGAMES - SNostalgia - B1 - P4",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Dofus",
+        "isValid": false
+      },
+      {
+        "name": "Ultima Online",
+        "isValid": true
+      },
+      {
+        "name": "MU Online",
+        "isValid": false
+      },
+      {
+        "name": "Priston Tale",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B1 - P6 - Qual o nome deste jogo?",
+    "description": "HypeGAMES - SNostalgia - B1 - P6",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Futebol Mania",
+        "isValid": false
+      },
+      {
+        "name": "Soccer 2000",
+        "isValid": false
+      },
+      {
+        "name": "Futebol Brasileiro 96",
+        "isValid": true
+      },
+      {
+        "name": "Ronaldinho Soccer",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_01",
+    "description": "HypeGAMES - Quiz - B2 - P1",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "God of War Ragnarök",
+        "isValid": false
+      },
+      {
+        "name": "Elden Ring",
+        "isValid": true
+      },
+      {
+        "name": "Horizon Forbidden West",
+        "isValid": false
+      },
+      {
+        "name": "Stray",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_02",
+    "description": "HypeGAMES - Quiz - B2 - P2",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Os Rebeldes",
+        "isValid": true
+      },
+      {
+        "name": "A Aliança",
+        "isValid": false
+      },
+      {
+        "name": "Os Saqueadores",
+        "isValid": false
+      },
+      {
+        "name": "O Sindicato",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_03",
+    "description": "HypeGAMES - Quiz - B2 - P3",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Bellato",
+        "isValid": false
+      },
+      {
+        "name": "Cora",
+        "isValid": false
+      },
+      {
+        "name": "Acrecia",
+        "isValid": true
+      },
+      {
+        "name": "Aliança",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_04",
+    "description": "HypeGAMES - Quiz - B2 - P4",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "São Paulo",
+        "isValid": false
+      },
+      {
+        "name": "Fortaleza",
+        "isValid": false
+      },
+      {
+        "name": "Salvador",
+        "isValid": false
+      },
+      {
+        "name": "Rio de Janeiro",
+        "isValid": true
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_05",
+    "description": "HypeGAMES - Quiz - B2 - P5",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Faker",
+        "isValid": false
+      },
+      {
+        "name": "Upset",
+        "isValid": true
+      },
+      {
+        "name": "Zeus",
+        "isValid": false
+      },
+      {
+        "name": "Deft",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B3 - P1 - O que o esquilo faz com a noz?",
+    "description": "HypeGAMES - WhatsNext - B3 - P1",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Ele come um pedaço",
+        "isValid": true
+      },
+      {
+        "name": "Ele arremessa pra longe",
+        "isValid": false
+      },
+      {
+        "name": "Ele sobe na noz",
+        "isValid": false
+      },
+      {
+        "name": "Ele deixa a noz cair",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B3 - P2 - coldzera irá matar quantos com a AWP?",
+    "description": "HypeGAMES - WhatsNext - B3 - P2",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "1 Player",
+        "isValid": false
+      },
+      {
+        "name": "2 Players",
+        "isValid": false
+      },
+      {
+        "name": "4 Players",
+        "isValid": false
+      },
+      {
+        "name": "5 Players",
+        "isValid": true
+      }
+    ]
+  },
+  {
+    "title": "B3 - P3 - Em Battlefield 5 o que o player irá fazer com uma bazooka?",
+    "description": "HypeGAMES - WhatsNext - B3 - P3",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Se acerta com a bazooka",
+        "isValid": false
+      },
+      {
+        "name": "Acerta um avião com a bazooka",
+        "isValid": true
+      },
+      {
+        "name": "Acerta o amigo com a bazooka",
+        "isValid": false
+      },
+      {
+        "name": "A bazooka está sem munição",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B3 - P4 - O que irá aparecer no final?",
+    "description": "HypeGAMES - WhatsNext - B3 - P4",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Um exército de soldados",
+        "isValid": false
+      },
+      {
+        "name": "Um urso gigante",
+        "isValid": false
+      },
+      {
+        "name": "Um lobo gigante",
+        "isValid": true
+      },
+      {
+        "name": "Nada, esse é o fim da cena",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B3 - P5 - Em Game Of Thrones oque eles viram na cena?",
+    "description": "HypeGAMES - WhatsNext - B3 - P5",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Exército de Dothrakis",
+        "isValid": false
+      },
+      {
+        "name": "Dragão",
+        "isValid": true
+      },
+      {
+        "name": "Arpia",
+        "isValid": false
+      },
+      {
+        "name": "Exército de Imaculados",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B4 - P1 - Quem é esse personagem?",
+    "description": "HypeGAMES - GuessWho - B4 - P1",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Mega Man",
+        "isValid": false
+      },
+      {
+        "name": "Proto Man",
+        "isValid": true
+      },
+      {
+        "name": "Bass",
+        "isValid": false
+      },
+      {
+        "name": "Zero",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B4 - P2 - Quem é esse personagem?",
+    "description": "HypeGAMES - GuessWho - B4 - P2",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Donatello",
+        "isValid": true
+      },
+      {
+        "name": "Michelangelo",
+        "isValid": false
+      },
+      {
+        "name": "Raphael",
+        "isValid": false
+      },
+      {
+        "name": "Leonardo",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B4 - P3 - Quem é esse personagem?",
+    "description": "HypeGAMES - GuessWho - B4 - P3",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Luigi",
+        "isValid": false
+      },
+      {
+        "name": "Mario",
+        "isValid": false
+      },
+      {
+        "name": "Waluigi",
+        "isValid": false
+      },
+      {
+        "name": "Wario",
+        "isValid": true
+      }
+    ]
+  },
+  {
+    "title": "B4 - P4 - Quem é esse personagem?",
+    "description": "HypeGAMES - GuessWho - B4 - P4",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Knuckles",
+        "isValid": false
+      },
+      {
+        "name": "Sonic",
+        "isValid": false
+      },
+      {
+        "name": "Amy Rose",
+        "isValid": true
+      },
+      {
+        "name": "Tails",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B4 - P5 - Quem é esse personagem?",
+    "description": "HypeGAMES - GuessWho - B4 - P5",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Hulk",
+        "isValid": false
+      },
+      {
+        "name": "Abominável",
+        "isValid": false
+      },
+      {
+        "name": "Tarzan",
+        "isValid": false
+      },
+      {
+        "name": "Blanka",
+        "isValid": true
+      }
+    ]
+  },
+  {
+    "title": "B5 - P1 - Aloha !",
+    "description": "HypeGAMES - Son666s - B5 - P1",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "MapleStory - Ossyria",
+        "isValid": false
+      },
+      {
+        "name": "Lost Ark - Nia Village",
+        "isValid": true
+      },
+      {
+        "name": "Dofus - Sufokia",
+        "isValid": false
+      },
+      {
+        "name": "Flyff - Azria",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B5 - P2 - Esse é meu jeito...",
+    "description": "HypeGAMES - Son666s - B5 - P2",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Bleach",
+        "isValid": false
+      },
+      {
+        "name": "One Piece",
+        "isValid": false
+      },
+      {
+        "name": "Hunter x Hunter",
+        "isValid": false
+      },
+      {
+        "name": "Naruto",
+        "isValid": true
+      }
+    ]
+  },
+  {
+    "title": "B5 - P3 - Meu nome não é...!",
+    "description": "HypeGAMES - Son666s - B5 - P3",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "The Legend of Zelda: Ocarina of Time",
+        "isValid": true
+      },
+      {
+        "name": "Mega Man X5",
+        "isValid": false
+      },
+      {
+        "name": "Sonic Riders",
+        "isValid": false
+      },
+      {
+        "name": "Super Mario 64",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "B5 - P4 - Respire, vamos lá  !",
+    "description": "HypeGAMES - Son666s - B5 - P4",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Tower of Fantasy",
+        "isValid": true
+      },
+      {
+        "name": "Ni No Kuni",
+        "isValid": false
+      },
+      {
+        "name": "MIR4",
+        "isValid": false
+      },
+      {
+        "name": "Genshin Impact",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_06",
+    "description": "HypeGAMES - Quiz - B6 - P1",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Shalamayne",
+        "isValid": false
+      },
+      {
+        "name": "Kingsmourne",
+        "isValid": false
+      },
+      {
+        "name": "Frostmourne",
+        "isValid": true
+      },
+      {
+        "name": "Ashbringer",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_07",
+    "description": "HypeGAMES - Quiz - B6 - P2",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "King",
+        "isValid": false
+      },
+      {
+        "name": "Misha",
+        "isValid": true
+      },
+      {
+        "name": "Winnie",
+        "isValid": false
+      },
+      {
+        "name": "Ted",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_08",
+    "description": "HypeGAMES - Quiz - B6 - P3",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Marci",
+        "isValid": true
+      },
+      {
+        "name": "Shadow Fiend",
+        "isValid": false
+      },
+      {
+        "name": "Primal Beast",
+        "isValid": false
+      },
+      {
+        "name": "Pudge",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_09",
+    "description": "HypeGAMES - Quiz - B6 - P4",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "FalleN",
+        "isValid": false
+      },
+      {
+        "name": "coldzera",
+        "isValid": true
+      },
+      {
+        "name": "cogu",
+        "isValid": false
+      },
+      {
+        "name": "fnx",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_10",
+    "description": "HypeGAMES - Quiz - B6 - P5",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Wapoza",
+        "isValid": false
+      },
+      {
+        "name": "Wabbit",
+        "isValid": true
+      },
+      {
+        "name": "Wato",
+        "isValid": false
+      },
+      {
+        "name": "Wei",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_11",
+    "description": "HypeGAMES - Quiz - B6 - P6",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Terras Distantes",
+        "isValid": true
+      },
+      {
+        "name": "Jornada ao Oeste",
+        "isValid": false
+      },
+      {
+        "name": "Reinos Combatentes",
+        "isValid": false
+      },
+      {
+        "name": "Ameaça de Haspon",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_12",
+    "description": "HypeGAMES - Quiz - B6 - P7",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Tower of Fantasy",
+        "isValid": false
+      },
+      {
+        "name": "Genshin Impact",
+        "isValid": false
+      },
+      {
+        "name": "Apex Legends Mobile",
+        "isValid": false
+      },
+      {
+        "name": "Marvel Snap",
+        "isValid": true
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_13",
+    "description": "HypeGAMES - Quiz - B6 - P8",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Monge",
+        "isValid": false
+      },
+      {
+        "name": "Assassino",
+        "isValid": false
+      },
+      {
+        "name": "Demon Hunter",
+        "isValid": true
+      },
+      {
+        "name": "Bárbaro",
+        "isValid": false
+      }
+    ]
+  },
+  {
+    "title": "PERGUNTA_14",
+    "description": "HypeGAMES - Quiz - B6 - P9",
+    "imageUrl": "http://hype.bayz.gg/arts/levelmaximo-live.png",
+    "options": [
+      {
+        "name": "Imperius",
+        "isValid": false
+      },
+      {
+        "name": "Tyrael",
+        "isValid": false
+      },
+      {
+        "name": "Itherael",
+        "isValid": false
+      },
+      {
+        "name": "Auriel",
+        "isValid": true
+      }
+    ]
+  }
+]
