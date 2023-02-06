@@ -39,6 +39,7 @@
     </br>
 
     <p id="resultHtml"> Resultado:</p>
+    </br>
     <p id="resultLabelHtml"> Esse é o jogo certo?</p>
 
   </body>
@@ -69,7 +70,8 @@
          
           const totalResult = document.getElementById('resultHtml').innerHTML = "Pergunta : " + result[0].title + '</br>' +
           ' Descrição sobre a pergunta : ' + result[0].description + '</br>' + 
-          'Link imagem:' + result[0].imageUrl 
+          'Link imagem:' + result[0].imageUrl + '</br>' +
+          'Opções:' + result[0].options
           console.log(totalResult);
         });
       });
