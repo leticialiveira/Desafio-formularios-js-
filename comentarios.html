@@ -1,0 +1,38 @@
+<!--  adiconou um input, pra colocar as informações dos dados,label pra colocar o que voce quer adicionar e button pra ter um botão que envia os dados 
+// o .getElementById serve pra remeter algo que ja utulizou, no caso esta se referindo ao id dos inputs 
+* const ... = document.getElementById("elemento que quer"); // ta direcionando pra onde vai o que a pessoa digitou no input ( nesse caso vai comparar o que ela enviou com question.json)
+* fetch("./questions.json") // fetch: chama o arquivo
+* const resultado = json; // a variavel esta pegando todos os dados do arquivo json
+* const result = resultado.filter((item) => { ==> // usando a função filtro pra pegar um determinado tipo de item
+* item.title.toUpperCase().includes(titleInput.value.toUpperCase()) &&
+* item.description.toUpperCase().includes(descriptionInput.value.toUpperCase()) ==>
+//primeiro ele pegou o item titulo (pegando todos os titulos), pediu pra ficar tudo maisculo, esta pegando o valor do input 
+//e dizendo pra tbm ficar maiusculo ( coisa que vai ignorar caso vc digite um valor minusculo e não seja o mesmo). o || 
+// significa 'or' e vai servir pra caso um funcione, ele nao vai depender do outro pra funcionar( coisa que seria necessaria no && )
+*console.log(result); // o console.log esta no result pois é justamente onde esta filtrando o join.
+
+
+labelResultButton.addEventListener("click", function () {
+
+        fetch("./questions.json")
+      .then((response) => response.json())
+      .then((json) => {
+     
+        const completeFile2 = json;
+        const result2 = completeFile2.filter((dados) => {
+            if(labelResult === dados.options[0].name[0]){
+                return(
+                    dados.options[0].isValid[0] === true
+
+                )
+            }
+            else{
+                return(
+                    dados.options[0].isValid[0] === false
+
+                )
+            }
+        })
+        console.log(result2)
+    })
+})

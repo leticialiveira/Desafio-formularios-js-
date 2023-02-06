@@ -11,7 +11,7 @@
   <body>
     
     <h1>Questionário:</h1>
-
+    
     <label for="title"> Pergunta:</label>
     <input type="text" id="title" /> 
     </br>
@@ -27,15 +27,15 @@
     </br>
 
     <label class=" label2">B)</label2> Jogo2 ==> </label> 
-    <button id="labelButton2">Verificar</button> 
+    <button id="labelButton">Verificar</button> 
     </br>
 
     <label class=" label3">C)</label3> Jogo3 ==> </label> 
-    <button id="labelButton2">Verificar</button> 
+    <button id="labelButton">Verificar</button> 
     </br>
 
     <label class=" label4">D)</label4> Jogo4 ==> </label> 
-    <button id="labelButton2">Verificar</button>
+    <button id="labelButton">Verificar</button> 
     </br>
 
     <p id="resultHtml"> Resultado:</p>
@@ -47,13 +47,9 @@
     const titleInput = document.getElementById("title");
     const descriptionInput = document.getElementById("description");
     const submitButton = document.getElementById("submitButton");
-    const noHtml = document.getElementById("nomeTitle")
-
-    
     submitButton.addEventListener("click", function () {
 
       fetch("./questions.json")
-
       .then((response) => response.json())
       .then((json) => {
      
@@ -73,49 +69,42 @@
           console.log(totalResult);
         });
       });
-    
-      const labelValue1 = document.getElementById("label1");
-      const labelValue2 = document.getElementsByClassName("label2");
-      const labelValue3 = document.getElementsByClassName("label3");
-      const labelValue4 = document.getElementsByClassName("label4");
+      
+      const labelInput1 = document.getElementById("label1");
+      const labelInput2 = document.getElementsByClassName("label2");
+      const labelInput3 = document.getElementsByClassName("label3");
+      const labelInput4 = document.getElementsByClassName("label4");
       const labelButton = document.getElementsByClassName("labelButton");
-      labelButton.addEventListener("click", function () {
+      const resultLabelHtml = document.getElementById('resultLabelHtml')
+      
+      labelButton.addEventListener("click", () => {
         
       fetch("./questions.json")
       .then((response) => response.json())
       .then((json) => {
 
-      const completeFile2 = json;
-      const result2 = completeFile2.filter((dados) => {
+    const completeFile2 = json;
+    const result2 = completeFile2.filter((dados) => {
       
-      labelValue1 === dados.options[0].name[0] ? 'true' : 'false'
-      // dados.options[0].isValid[0] === true ? 'true' : 'false' or
-      return dados.options[0].isValid[0] === true
-      return false 
-
-      labelValue2 === dados.options[0].name[1] ? 'true' : 'false'
-      // dados.options[0].isValid[1] === true ? 'true' : 'false' or
-      return dados.options[0].isValid[1] === true
-      return false
-
-      labelValue3 === dados.options[0].name[2] ? 'true' : 'false'
-      // dados.options[0].isValid[2] === true ? 'true' : 'false' or
-      return dados.options[0].isValid[2] === true
-      return false
-
-      labelValue4 === dados.options[0].name[3] ? 'true' : 'false'
-      // dados.options[0].isValid[3] === true ? 'true' : 'false' or
-      return dados.options[0].isValid[3] === true
-      return false
-
+      labelInput1 === dados.options[0].name[0] ? 'true' : 'false'
+      dados.options[0].isValid[0] === true ? 'true' : 'false'
+      
+      labelInput2 === dados.options[0].name[1] ? 'true' : 'false'
+      dados.options[0].isValid[1] === true ? 'true' : 'false'
+      
+      labelInput3 === dados.options[0].name[2] ? 'true' : 'false'
+      dados.options[0].isValid[2] === true ? 'true' : 'false'
+      
+      labelInput4 === dados.options[0].name[3] ? 'true' : 'false'
+      dados.options[0].isValid[3] === true ? 'true' : 'false'
+      
     });
     
-    const totalResult2 =  document.getElementById('labelValue1').innerHTML == dados.options[0].name[0] + document.getElementById('labelValue2')
-    .innerHTML == dados.options[0].name[1] + document.getElementById('labelValue3').innerHTML == dados.options[0].name[2] + document.getElementById('labelValue4')
-    .innerHTML == dados.options[0].name[3];
+    console.log(result2);
+    const totalResult2 =  document.getElementById('resultLabelHtml').innerHTML =  labelInput1
     console.log(totalResult2);
-      });
-});
-  </script>
     
+  });
+});
+</script>
 </html>
