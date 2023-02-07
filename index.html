@@ -21,21 +21,31 @@
     <button id="submitButton">PESQUISAR</button> 
     </br>
 
-    <label class=" label1">A)</label1> Jogo1 ==> </label> 
-    <input type="text" name="" id="label1">
-    <button id="labelButton">Verificar</button> 
+    <label class=" label1">A)<label> Jogo1 => </label></label> 
+    <input type="text" name="" >
+    <button id="labelButton1">Verificar</button> 
     </br>
-
-    <label class=" label2">B)</label2> Jogo2 ==> </label> 
+    <!-- Exemplo aqui, eu coloquei uma label dentro da outra, e coloquei o id pra pegar especificamente ela . 
+      NO CASO N PODE TER CLASS? Pode ter Class, o que não pode é você editar o nome da labe
+    -->
+    <label class=" label2">B)</label> Jogo2 => </label>
+    <input type="text" name="" >
     <button id="labelButton2">Verificar</button> 
     </br>
+    <!-- <label13> Não pode ser assim, sempre precisar ser só label, aqui você colocou label3. AHHHHHHHHHHH, foi sem querer mds. 
+      Ai lá você ta tentando pegar ID pelo nome dela, ai buga tudo, coloca um ID. NO LUGAR DE CLASS? 
+      NN, você usa classe ou id, o que preferir, ai lá você puxa como class ou id, do jeito que você colocou. OK
+    -->
 
-    <label class=" label3">C)</label3> Jogo3 ==> </label> 
-    <button id="labelButton2">Verificar</button> 
+    <!-- Eu vou programar ali no projeto, qualquer dúvida fale ou avise ok -- Eu vou ta aqui, então rlx, eu vou ta vendo suas traquinagens-->
+    <label class=" label3">C)</label> Jogo3 => </label>
+    <input type="text" name="" >
+    <button id="labelButton3">Verificar</button> 
     </br>
 
-    <label class=" label4">D)</label4> Jogo4 ==> </label> 
-    <button id="labelButton2">Verificar</button>
+    <label class=" label4">D)</label> Jogo4 => </label>
+    <input type="text" name="" >
+    <button id="labelButton4">Verificar</button>
     </br>
 
     <p id="resultHtml"> Resultado:</p>
@@ -48,9 +58,8 @@
     const titleInput = document.getElementById("title");
     const descriptionInput = document.getElementById("description");
     const submitButton = document.getElementById("submitButton");
-    const noHtml = document.getElementById("nomeTitle")
 
-    
+    // Primeiro botão
     submitButton.addEventListener("click", function () {
 
       fetch("./questions.json")
@@ -68,56 +77,190 @@
             );
           });
          
-          const totalResult = document.getElementById('resultHtml').innerHTML = "Pergunta : " + result[0].title + '</br>' +
+          const totalResult = document.getElementById('resultHtml').innerHTML =
+          "Pergunta : " + result[0].title + '</br>' +
           ' Descrição sobre a pergunta : ' + result[0].description + '</br>' + 
-          'Link imagem:' + result[0].imageUrl + '</br>' +
-          'Opções:' + result[0].options
+          'Opções de Jogos:' + result[0].options[0].name[0]
           console.log(totalResult);
+          
         });
       });
     
-      const labelValue1 = document.getElementById("label1");
+      //OUTRO PROBLEMA ---->  label2,3,4 etc.. você está pegando pelo nome da label, e não pelo id dela, e label não pode ser alterado, exemplo, me segue ai
+      const labelValue1 = document.getElementsByClassName("label1");
       const labelValue2 = document.getElementsByClassName("label2");
       const labelValue3 = document.getElementsByClassName("label3");
       const labelValue4 = document.getElementsByClassName("label4");
-      const labelButton = document.getElementsByClassName("labelButton");
-      labelButton.addEventListener("click", function () {
-        
+      
+      // Botão estavando buscando pela CLASS, mas ele é um ID //TESTA dnv //esse foi o motivo pra função n pegar??? // também, encontrei outro problema aqui
+      const labelButton1 = document.getElementById("labelButton1");
+      const labelButton2 = document.getElementById("labelButton2");
+      const labelButton3 = document.getElementById("labelButton3");
+      const labelButton4 = document.getElementById("labelButton4");
+
+    // Primeiro Botão Label
+    labelButton1.addEventListener("click", function() {
+      
+      // document.getElementById('label1').innerHTML = 'Bomber Man'
+      // document.getElementById('label2').innerHTML = 'Mario Bros' 
+      // document.getElementById('label3').innerHTML = 'Super Mario World'
+      // document.getElementById('label4').innerHTML = 'Mario Kart'
+
+
+      //Document estava pegando o id, porém no lugar de passar o id, você estava passando o nome da variavel //voumematrkkkkkkkkkkkkkkkk testa ai
+      //Funcionou, agora é só fazer a verificação nela, eu deletei o que ce tinha feito sem querer KKKKKKKKKKKKKKKK //so vc ta rindo kk, ta bom vlww
       fetch("./questions.json")
       .then((response) => response.json())
       .then((json) => {
+        const result1 = json.filter((dados) => {
+          // const totalResult2 = document.getElementById('resultLabelHtml').innerHTML = dados.options[0].isValid[3]
+          return (
+            console.log('Essa resposta é:',(dados.options[0].isValid[2] === true && labelValue3 === dados.options[0].name[2]))
+            // (dados.options[0].isValid[0] === true && labelValue1 === dados.options[0].name[0])
+            // (dados.options[0].isValid[1] === true && labelValue2 === dados.options[0].name[1]) ||
+            // (dados.options[0].isValid[2] === true && labelValue3 === dados.options[0].name[2]) ||
+            // (dados.options[0].isValid[3] === true && labelValue4 === dados.options[0].name[3])
+            );
 
-      const completeFile2 = json;
-      const result2 = completeFile2.filter((dados) => {
-      
-      labelValue1 === dados.options[0].name[0] ? 'true' : 'false'
-      // dados.options[0].isValid[0] === true ? 'true' : 'false' or
-      return dados.options[0].isValid[0] === true
-      return false 
-
-      labelValue2 === dados.options[0].name[1] ? 'true' : 'false'
-      // dados.options[0].isValid[1] === true ? 'true' : 'false' or
-      return dados.options[0].isValid[1] === true
-      return false
-
-      labelValue3 === dados.options[0].name[2] ? 'true' : 'false'
-      // dados.options[0].isValid[2] === true ? 'true' : 'false' or
-      return dados.options[0].isValid[2] === true
-      return false
-
-      labelValue4 === dados.options[0].name[3] ? 'true' : 'false'
-      // dados.options[0].isValid[3] === true ? 'true' : 'false' or
-      return dados.options[0].isValid[3] === true
-      return false
-
+          });
+          // console.log(result1);
     });
-    
-    const totalResult2 =  document.getElementById('labelValue1').innerHTML == dados.options[0].name[0] + document.getElementById('labelValue2')
-    .innerHTML == dados.options[0].name[1] + document.getElementById('labelValue3').innerHTML == dados.options[0].name[2] + document.getElementById('labelValue4')
-    .innerHTML == dados.options[0].name[3];
-    console.log(totalResult2);
+  });
+
+    // Segundo Botão Label
+  labelButton2.addEventListener("click", function() {
+
+  fetch("./questions.json")
+  .then((response) => response.json())
+  .then((json) => {
+    const result2 = json.filter((dados) => {
+      // const totalResult2 = document.getElementById('resultLabelHtml').innerHTML = dados.options[0].isValid[3]
+      return (
+      console.log('Essa resposta é:',(dados.options[0].isValid[2] === true && labelValue3 === dados.options[0].name[2]))
+        );
+
       });
+      // console.log(result2);
 });
+});
+
+    // Terceiro Botão Label
+  labelButton3.addEventListener("click", function() {
+
+  fetch("./questions.json")
+  .then((response) => response.json())
+  .then((json) => {
+    const result3 = json.filter((dados) => {
+      // const totalResult2 = document.getElementById('resultLabelHtml').innerHTML = dados.options[0].isValid[3]
+      return (
+      console.log('Essa resposta é:',(labelValue3 === dados.options[0].name[2] && dados.options[0].isValid[2] === true ))
+        );
+      });
+      const totalResultLabel3 = document.getElementById('resultLabelHtml').innerHTML =
+          "Jogo 3: " + result3[0,2]
+          console.log(totalResultLabel3);
+});
+});
+
+    // Quarto Botão Label
+    labelButton4.addEventListener("click", function() {
+
+    fetch("./questions.json")
+    .then((response) => response.json())
+    .then((json) => {
+    const result4 = json.filter((dados) => {
+    // const totalResult2 = document.getElementById('resultLabelHtml').innerHTML = dados.options[0].isValid[3]
+      return (
+        console.log('Essa resposta é:',(dados.options[0].isValid[2] === true && labelValue3 === dados.options[0].name[2]))
+      );
+    });
+    // console.log('Essa resposta está:', result3);
+});
+});
+
+
+
+
+
+
+
+// Exemplo
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Adicionei a atribuição do valor para labelValue1 depois do console.log da primeira etapa.
+// Substitui a série de return false com uma condição composta usando && e ||.
+// Removi o teste inútil que usa o innerHTML.
+// Adicionei o parênteses em volta da condição composta.
+// Alterei o console.log para mostrar o result2 ao invés de totalResult2.
+
+//Testa
   </script>
-    
+  
 </html>
+
+
+
+
+<!-- labelButton.addEventListener("click", function () {: Não está claro de onde vem a variável labelButton. Ela deve ser definida ou declarada antes de ser usada como um elemento do DOM.
+
+  const totalResult2 = document.getElementById('labelValue1').innerHTML = 'Terceira Etapa': Este é um atribuição de valor e não uma atribuição de variável. A variável totalResult2 irá conter o valor de 'Terceira Etapa' e não o elemento do DOM com id 'labelValue1'.
+  
+  fetch("./questions.json"): Esta chamada fetch é sincrona, o que significa que o resto do código será executado enquanto aguarda a resposta do servidor. Isso pode causar problemas de performance se o arquivo é grande.
+  
+  const completeFile2 = json;: Não é uma boa prática de nomenclatura usar números no nome das variáveis. Além disso, o nome completeFile2 não fornece informações claras sobre o que ele representa.
+  
+  const result2 = completeFile2.filter((dados) => {: O método filter deve retornar um valor verdadeiro ou falso para cada elemento do array para determinar se ele deve ser incluído no novo array resultante. No entanto, vários return false são inseridos após as comparadas, resultando em que todos os elementos do array original são descartados.
+  
+  labelValue1 === dados.options[0].name[0] ? 'true' : 'false': Essa comparação não faz sentido, pois a variável labelValue1 não é definida ou declarada anteriormente. Além disso, o resultado da comparação não é armazenado em uma variável ou usado de alguma outra forma.
+  
+  console.log('log',totalResult2);: Isso irá imprimir o valor de 'Terceira Etapa', que é o resultado da atribuição na linha 4, e não o resultado da chamada filter.
+  
+   -->
+
+<!-- 
+   Coisas para perguntar:
+   * teria como criar uma parte chamada options dentro de todos os jogos ou preciso criar de um por um pra poder associar com o title? 
+  ===> Toda vez que tento pesquisar sobre determinado jogo ele ta apenas pegando a posição 0, nao ta seguindo o contexto dos titulos e descriçoes. <=== #e isso aq? nao é pra fazer? é pra continuar indo de um por um?
+   * pq m#rd4 so esta funcionando quando coloco o log dentro do return? e pq m#rd4 o jogo3 nao ta vindo true? 
+
+   Resolução
+
+   Você precisa usar o (sistema de pesquisa direta) #isso eu ja sei ou é pra pesquisar?, { É exatamente o que você já sabe, fazer a pesquisa como você já ta fazendo, e com base no resultado
+  você continuar pegando tudo com index 0 }, aquela que traz apenas 1 resultado do que foi pesquisado, sendo assim, vocÊ
+   vai continuar podendo utilizar o (index) 0, para poder pegar os valores corretamente, 
+
+   Outra coisa ~ Talvez seria melhor o seguinte fluxo
+
+   1 - Um botão para pesquisar uma pergunta como titulo e descrição para tornar a pergunta mais exata
+   2 - Quando a pergunta for finalizada traga os resultados da seguinte forma em tela
+   
+   Exemplo:
+   Titulo: B1 - P1 - Qual o nome deste jogo?
+   Descrição: HypeGAMES - SNostalgia - B1 - P1
+
+   A) Bomber Man - (Botão com um nome chamado - Verificar) 
+   B) Mario Bros - (Botão com um nome chamado - Verificar)
+   C) Naruto - (Botão com um nome chamado - Verificar)
+   D) Mario Kart - (Botão com um nome chamado - Verificar)
+
+   Exemplo de funcionalidade
+
+   Se um indivuo clicar no botão "Verificar" da letra A - ele vai receber uma mensagem dizendo que sé a resposta correta ou não
+
+E o botão
+só vai verificar, se a resposta é correta ou errada
+o botão você vai comparar com o true/false 
+que tem dentro de cada resposta
+a,b,c,d
+

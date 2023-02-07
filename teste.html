@@ -1,45 +1,41 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="./questions.json"></script>
-    <!-- <link rel="stylesheet" href="./style.css"> -->
     <title>Document</title>
   </head>
   <body>
+    <h1>Sistema de perguntas</h1>
     
-    <h1>Questionário:</h1>
-    
-    <label for="title"> Pergunta:</label>
-    <input type="text" id="title" /> 
-    </br>
+    <div class="search">
+        <label id="title">
+          <span>Titulo da pesquisa</span>
+          <input type="text">
+        </label>
+        <label id="description">
+          Titulo da descrição
+          <input type="text">
+        </label>
+        <button id="submitButton">Pesquisar</button>
+        <p id="resultHtml">Resultado:</p>
+    </div>
 
-    <label for="description"> Descrição da pergunta:</label>
-    <input type="text" id="description" /> 
-    <button id="submitButton">PESQUISAR</button> 
-    </br>
-
-    <label class=" label1">A)</label1> Jogo1 ==> </label> 
-    <input type="text" name="" id="label1">
-    <button id="labelButton">Verificar</button> 
-    </br>
-
-    <label class=" label2">B)</label2> Jogo2 ==> </label> 
-    <button id="labelButton">Verificar</button> 
-    </br>
-
-    <label class=" label3">C)</label3> Jogo3 ==> </label> 
-    <button id="labelButton">Verificar</button> 
-    </br>
-
-    <label class=" label4">D)</label4> Jogo4 ==> </label> 
-    <button id="labelButton">Verificar</button> 
-    </br>
-
-    <p id="resultHtml"> Resultado:</p>
-    <p id="resultLabelHtml"> Esse é o jogo certo?</p>
+    <div class="questions">
+        <div class="game1">
+          <span>A) <span >{{conteúdo}}</span> </span>
+        </div>
+        <div class="game2">
+          <span>B) <span>{{conteúdo}}</span> </span>
+        </div>
+        <div class="game3">
+          <span>C) <span>{{conteúdo}}</span> </span>
+        </div>
+        <div class="game4">
+          <span>D) <span>{{conteúdo}}</span> </span>
+        </div>
+    </div>
 
   </body>
   <script>
@@ -47,6 +43,8 @@
     const titleInput = document.getElementById("title");
     const descriptionInput = document.getElementById("description");
     const submitButton = document.getElementById("submitButton");
+    const resultHtml = document.getElementById('resultHtml')
+
     submitButton.addEventListener("click", function () {
 
       fetch("./questions.json")
@@ -56,55 +54,108 @@
         const completeFile = json;
         const result = completeFile.filter((item) => {
           return (
-
-            item.title.toUpperCase().includes(titleInput.value.toUpperCase()) &&
-            item.description.toUpperCase().includes(descriptionInput.value.toUpperCase())  
-
+            item.title.toUpperCase().includes(titleInput.value) &&
+            item.description.toUpperCase().includes(descriptionInput.value)  
             );
           });
          
-          const totalResult = document.getElementById('resultHtml').innerHTML = "Pergunta : " + result[0].title + '</br>' +
-          ' Descrição sobre a pergunta : ' + result[0].description + '</br>' + 
-          'Link imagem:' + result[0].imageUrl 
-          console.log(totalResult);
+          const totalResult = document.getElementById('resultHtml').innerHTML =
+          "Pergunta : " + result.title + '</br>' +
+          ' Descrição sobre a pergunta : ' + result.description           
+          console.log(totalResult)
+
+          const games = completeFile.filter((dados) => {
+            return (
+              game1 === dados.options[0].name[0]
+            )
+            return (
+              game2 === dados.options[0].name[1]
+            )
+            return (
+              game3 === dados.options[0].name[2]
+            )
+            return (
+              game4 === dados.options[0].name[3]
+            )
+          })
         });
       });
-      
-      const labelInput1 = document.getElementById("label1");
-      const labelInput2 = document.getElementsByClassName("label2");
-      const labelInput3 = document.getElementsByClassName("label3");
-      const labelInput4 = document.getElementsByClassName("label4");
-      const labelButton = document.getElementsByClassName("labelButton");
-      const resultLabelHtml = document.getElementById('resultLabelHtml')
-      
-      labelButton.addEventListener("click", () => {
-        
-      fetch("./questions.json")
-      .then((response) => response.json())
-      .then((json) => {
 
-    const completeFile2 = json;
-    const result2 = completeFile2.filter((dados) => {
-      
-      labelInput1 === dados.options[0].name[0] ? 'true' : 'false'
-      dados.options[0].isValid[0] === true ? 'true' : 'false'
-      
-      labelInput2 === dados.options[0].name[1] ? 'true' : 'false'
-      dados.options[0].isValid[1] === true ? 'true' : 'false'
-      
-      labelInput3 === dados.options[0].name[2] ? 'true' : 'false'
-      dados.options[0].isValid[2] === true ? 'true' : 'false'
-      
-      labelInput4 === dados.options[0].name[3] ? 'true' : 'false'
-      dados.options[0].isValid[3] === true ? 'true' : 'false'
-      
-    });
-    
-    console.log(result2);
-    const totalResult2 =  document.getElementById('resultLabelHtml').innerHTML =  labelInput1
-    console.log(totalResult2);
-    
-  });
-});
+//       labelButton1.addEventListener("click", function () {
+
+//         fetch("./questions.json")
+//         .then((response) => response.json())
+//         .then((json) => {
+
+//         const completeFile = json;
+//         const result1 = completeFile.filter((item) => {
+        
+//           if(dados.options[0].isValid[0] === true && labelValue3 === dados.options[0].name[0]){
+//             return ('você acertou') 
+//           } else {
+//             return ('você errou, tente novamente')
+//           }
+        
+//       });
+//         const totalResult = document.getElementById('resultHtml').innerHTML =
+//         'Jogo 1 :'  + result1 
+//         console.log(totalResult);
+//   });
+// });
+
+
+//    A) Bomber Man - (Botão com um nome chamado - Verificar) 
+//    B) Mario Bros - (Botão com um nome chamado - Verificar)
+//    C) Naruto     - (Botão com um nome chamado - Verificar)
+//    D) Mario Kart - (Botão com um nome chamado - Verificar)
+
+//Tá ouvindo? n pere
+
 </script>
-</html>
+
+<style>
+  body {
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 300% 300%;
+    background-image: linear-gradient(
+        -45deg, 
+        rgba(59,173,227,1) 0%, 
+        rgba(87,111,230,1) 25%, 
+        rgba(152,68,183,1) 51%, 
+        rgba(255,53,127,1) 100%
+    );  
+    animation: AnimateBG 20s ease infinite;
+  }
+
+    @keyframes AnimateBG { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  .questions {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 20px;
+  }
+
+  .search button {
+    width: 178px;
+  }
+
+</style>
