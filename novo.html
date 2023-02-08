@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./questions.json"></script>
+    <link rel="stylesheet" href="./estudando/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <h1> Questionário:</h1>
+
+        <div class="title-description">
+            <label class="title"> Pergunta:
+                <input type="text" id="title">
+            </label>
+        
+            <label class="description">  Descrição da  pergunta:
+                <input type="text" id="description">
+            </label>
+            <button id="submitButton"> pesquisar</button>
+        </div>
+
+        <div class="response">
+            <p id="resultBody"> Resultados: </p>
+            <label>
+                <p id="option1"> A) Jogo 1</p> <button id="optionButton1"> verificar</button> 
+                <span id="optionValid1"></span>
+                
+                <p id="option2"> B) Jogo 2</p> <button id="optionButton2"> verificar</button>
+                <span id="optionValid2"></span>
+                
+                <p id="option3"> C) Jogo 3</p> <button id="optionButton3"> verificar</button>
+                <span id="optionValid3"></span>
+                
+                <p id="option4"> D) Jogo 4</p> <button id="optionButton4"> verificar</button>
+                <span id="optionValid4"></span>
+            </label>
+        </div>
+        <i class="fa-thin fa-gamepad-modern"></i><i class="fa-solid fa-headset"></i>    
+    </div>
+    <div class="img1">
+        <img src="./midias/icons8-apple-arcade-50.png" alt="">
+    </div>
+    <div class="img2">
+        <img src="./midias/icons8-controle-50.png" alt="">
+    </div>
+    <div class="img3">
+        <img src="./midias/icons8-jogando-50.png" alt="">
+    </div>
+    <div class="img4">
+        <img src="./midias/icons8-joystick-50.png" alt="">
+    </div>
+
+</body>
+
+<script>
+    const titleBody = document.getElementById('title')
+    const descriptionBody = document.getElementById('description')
+    const submitButtonBody = document.getElementById('submitButton')
+    const optionButton1Html = document.getElementById('optionButton1')
+    const optionButton2Html = document.getElementById('optionButton2')
+    const optionButton3Html = document.getElementById('optionButton3')
+    const optionButton4Html = document.getElementById('optionButton4')
+    // const resultBodyHtml = document.getElementById('resultBody')
+
+    submitButton.addEventListener("click", function () {
+
+    fetch("./questions.json")
+    .then((response) => response.json())
+    .then((json) => {
+
+    const completeFile = json;
+    const result = completeFile.filter((item) => {
+    return ( 
+        item.title.toUpperCase('').includes(titleBody.value.toUpperCase('')) &&
+        item.description.toUpperCase('').includes(descriptionBody.value.toUpperCase('')) 
+    );
+    })
+
+    optionButton1Html.addEventListener("click", function() {
+
+    })
+    const totalResult = document.getElementById('resultBody').innerHTML = 'Pergunta :  ' + result[0].title + '</br>'+
+                        'Descrição da pergunta :  ' + result[0].description
+
+    const optionName1 = document.getElementById('option1').innerHTML = 'A)   ' + result[0].options[0].name  
+    const optionIsValid1 = result[0].options[0].isValid
+
+    optionButton1Html.addEventListener("click", function () {
+        if(optionIsValid1 ){
+            const resultOption1 = document.getElementById('optionValid1').innerHTML = 'Essa é a opção correta!'
+        } else {
+            const resultOption1 = document.getElementById('optionValid1').innerHTML = 'Essa é a opção errada, tente novamente!'
+        }
+    })
+
+    const optionName2 = document.getElementById('option2').innerHTML = 'B)   ' + result[0].options[1].name  
+    const optionIsValid2 = result[0].options[1].isValid
+
+    optionButton2Html.addEventListener("click", function () {
+        if(optionIsValid2 ){
+            const resultOption2 = document.getElementById('optionValid2').innerHTML = 'Essa é a opção correta!'
+        } else {
+            const resultOption2 = document.getElementById('optionValid2').innerHTML = 'Essa é a opção errada, tente novamente!'
+        }
+
+    })
+
+    const optionName3 = document.getElementById('option3').innerHTML = 'C)   ' + result[0].options[2].name  
+    const optionIsValid3 = result[0].options[2].isValid
+
+    optionButton3Html.addEventListener("click", function () {
+        if(optionIsValid3 ){
+            const resultOption3 = document.getElementById('optionValid3').innerHTML = 'Essa é a opção correta!'
+        } else {
+            const resultOption3 = document.getElementById('optionValid3').innerHTML = 'Essa é a opção errada, tente novamente!'
+        }
+
+    })
+
+    const optionName4 = document.getElementById('option4').innerHTML = 'D)   ' + result[0].options[3].name  
+    const optionIsValid4 =  result[0].options[3].isValid
+
+    optionButton4Html.addEventListener("click", function () {
+        if(optionIsValid4 ){
+            const resultOption4 = document.getElementById('optionValid4').innerHTML = 'Essa é a opção correta!'
+        } else {
+            const resultOption4 = document.getElementById('optionValid4').innerHTML = 'Essa é a opção errada, tente novamente!'
+        }
+
+    })
+    // const optionButton4Html = document.getElementById('optionButton4').innerHTML =  result[0].options[3].isValid 
+
+    })
+})
+//     optionButton1Html.addEventListener("click", function () {
+
+//     fetch("./questions.json")
+//     .then((response) => response.json())
+//     .then((json) => {
+
+//     const completeFile2 = json;
+//     const result2 = completeFile2.filter((dados) => {
+//         if(dados[0].options[0].isValid === true){
+//             return ('ok') 
+//         } else {
+//             return ('nop')
+//         }
+//     })
+//     })
+//     })
+    </script>
+</html>
