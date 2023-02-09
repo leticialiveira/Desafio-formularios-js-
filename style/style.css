@@ -21,7 +21,7 @@ body {
     overflow: hidden;
     background-size: 300% 300%;
     background-image: linear-gradient(
-        -45deg, 
+        -50deg, 
         rgba(6,27,39,1) 0%, 
         rgba(87,111,230,1) 25%, 
         rgba(132,132,136,1)  51%, 
@@ -75,6 +75,8 @@ body {
     justify-content: center;
     flex-direction: column;
     gap: 10px;
+    border-bottom: inset 3px var(--color-border);
+
 }
 
 .title-description input {
@@ -86,11 +88,12 @@ body {
     justify-content: center;
     flex-direction: column;
     gap: 10px;
+    border-bottom: inset 3px var(--color-border);
     
 }
 
 .title-description button{
-    border: double 4px var(--color-pesquisa);
+    border: double 4px var(--color-border);
     
 }
 
@@ -103,7 +106,6 @@ body {
     justify-content: center;
     gap: 20px;
     font-family: 'Ubuntu Mono', monospace;
-    
 }
 
 .response span{
@@ -116,10 +118,26 @@ body {
     margin: 5px;
 }
 
+.checkScore{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu Mono', monospace;
+    color: navy;
+}
+
+
+.checkScore button {
+    border: double 4px var(--color-border);
+}
+
 .img1 img {
     position: absolute;
     bottom: 500px;
     right: 750px;
+    /* transform: translate(0, 0, -500px, -750) */
+    /* # top, left, bottom, right */
 }
 .img2 img {
     position: absolute;

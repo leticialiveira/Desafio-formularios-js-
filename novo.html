@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./questions.json"></script>
-    <link rel="stylesheet" href="./estudando/style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -26,8 +26,8 @@
         <div class="response">
             <p id="resultBody"> Resultados: </p>
             <label>
-                <p id="option1"> A) Jogo 1</p> <button id="optionButton1"> verificar</button> 
-                <span id="optionValid1"></span>
+                <p id="option1" > A) Jogo 1</p> <button id="optionButton1"> verificar</button> 
+                <span   id="optionValid1"></span>
                 
                 <p id="option2"> B) Jogo 2</p> <button id="optionButton2"> verificar</button>
                 <span id="optionValid2"></span>
@@ -37,9 +37,13 @@
                 
                 <p id="option4"> D) Jogo 4</p> <button id="optionButton4"> verificar</button>
                 <span id="optionValid4"></span>
+
             </label>
         </div>
-        <i class="fa-thin fa-gamepad-modern"></i><i class="fa-solid fa-headset"></i>    
+        <div class="checkScore">
+            <p id="pointing"> Verifique a sua pontuação : </p> <button id="pointingButton"> verificar </button>
+            <span id="pointingValue"> </span>
+        </div>
     </div>
     <div class="img1">
         <img src="./midias/icons8-apple-arcade-50.png" alt="">
@@ -65,92 +69,112 @@
     const optionButton3Html = document.getElementById('optionButton3')
     const optionButton4Html = document.getElementById('optionButton4')
     // const resultBodyHtml = document.getElementById('resultBody')
-
+    
     submitButton.addEventListener("click", function () {
-
-    fetch("./questions.json")
-    .then((response) => response.json())
-    .then((json) => {
-
-    const completeFile = json;
-    const result = completeFile.filter((item) => {
-    return ( 
-        item.title.toUpperCase('').includes(titleBody.value.toUpperCase('')) &&
-        item.description.toUpperCase('').includes(descriptionBody.value.toUpperCase('')) 
-    );
-    })
-
-    optionButton1Html.addEventListener("click", function() {
-
-    })
+        
+        fetch("./questions.json")
+        .then((response) => response.json())
+        .then((json) => {
+            
+            const completeFile = json;
+            const result = completeFile.filter((item) => {
+                return ( 
+                    item.title.toUpperCase('').includes(titleBody.value.toUpperCase('')) &&
+                    item.description.toUpperCase('').includes(descriptionBody.value.toUpperCase('')) 
+                    );
+            })
+    
     const totalResult = document.getElementById('resultBody').innerHTML = 'Pergunta :  ' + result[0].title + '</br>'+
-                        'Descrição da pergunta :  ' + result[0].description
-
+    'Descrição da pergunta :  ' + result[0].description
+    
     const optionName1 = document.getElementById('option1').innerHTML = 'A)   ' + result[0].options[0].name  
     const optionIsValid1 = result[0].options[0].isValid
+    let score = 0
 
     optionButton1Html.addEventListener("click", function () {
         if(optionIsValid1 ){
-            const resultOption1 = document.getElementById('optionValid1').innerHTML = 'Essa é a opção correta!'
-        } else {
-            const resultOption1 = document.getElementById('optionValid1').innerHTML = 'Essa é a opção errada, tente novamente!'
-        }
+                const resultOption1 = document.getElementById('optionValid1').innerHTML = 'Essa é a opção correta!'
+            setTimeout(() => {
+                const resultOption1 = document.getElementById('optionValid1').innerHTML = ''
+                return score = score + 1
+            }, 1000)
+
+            } else {
+                const resultOption1 = document.getElementById('optionValid1').innerHTML = 'Essa é a opção errada, tente novamente!'
+            setTimeout(() => {
+                const resultOption1 = document.getElementById('optionValid1').innerHTML = ''
+                return score = score - 1
+            }, 1000)
+            }
     })
 
+    
     const optionName2 = document.getElementById('option2').innerHTML = 'B)   ' + result[0].options[1].name  
     const optionIsValid2 = result[0].options[1].isValid
-
+    
     optionButton2Html.addEventListener("click", function () {
-        if(optionIsValid2 ){
-            const resultOption2 = document.getElementById('optionValid2').innerHTML = 'Essa é a opção correta!'
-        } else {
-            const resultOption2 = document.getElementById('optionValid2').innerHTML = 'Essa é a opção errada, tente novamente!'
-        }
+            if(optionIsValid2 ){
+                const resultOption2 = document.getElementById('optionValid2').innerHTML = 'Essa é a opção correta!'
+            setTimeout(() => {
+                const resultOption2 = document.getElementById('optionValid2').innerHTML = ''
+                return score = score + 1
+            }, 1000)
 
+            } else {
+                const resultOption2 = document.getElementById('optionValid2').innerHTML = 'Essa é a opção errada, tente novamente!'
+            setTimeout(() => {
+                const resultOption2 = document.getElementById('optionValid2').innerHTML = ''
+                return score = score - 1
+            }, 1000)
+            }
     })
+
 
     const optionName3 = document.getElementById('option3').innerHTML = 'C)   ' + result[0].options[2].name  
     const optionIsValid3 = result[0].options[2].isValid
-
+    
     optionButton3Html.addEventListener("click", function () {
-        if(optionIsValid3 ){
-            const resultOption3 = document.getElementById('optionValid3').innerHTML = 'Essa é a opção correta!'
-        } else {
-            const resultOption3 = document.getElementById('optionValid3').innerHTML = 'Essa é a opção errada, tente novamente!'
-        }
+        if(optionIsValid3){
+                const resultOption3 = document.getElementById('optionValid3').innerHTML = 'Essa é a opção correta!'
+            setTimeout(() => {
+                const resultOption3 = document.getElementById('optionValid3').innerHTML = ''
+                return score = score + 1
+            }, 1000)
 
+            } else {
+                const resultOption3 = document.getElementById('optionValid3').innerHTML = 'Essa é a opção errada, tente novamente!'
+            setTimeout(() => {
+                const resultOption3 = document.getElementById('optionValid3').innerHTML = ''
+                return score = score - 1
+            }, 1000)
+            }
     })
 
     const optionName4 = document.getElementById('option4').innerHTML = 'D)   ' + result[0].options[3].name  
     const optionIsValid4 =  result[0].options[3].isValid
-
+    
     optionButton4Html.addEventListener("click", function () {
         if(optionIsValid4 ){
-            const resultOption4 = document.getElementById('optionValid4').innerHTML = 'Essa é a opção correta!'
-        } else {
-            const resultOption4 = document.getElementById('optionValid4').innerHTML = 'Essa é a opção errada, tente novamente!'
-        }
+                const resultOption4 = document.getElementById('optionValid4').innerHTML = 'Essa é a opção correta!'
+            setTimeout(() => {
+                const resultOption4 = document.getElementById('optionValid4').innerHTML = ''
+                return score = score + 1
+            }, 1000)
 
+            } else {
+                const resultOption4 = document.getElementById('optionValid4').innerHTML = 'Essa é a opção errada, tente novamente!'
+            setTimeout(() => {
+                const resultOption4 = document.getElementById('optionValid4').innerHTML = ''
+                return score = score - 1
+            }, 1000)
+            }
     })
-    // const optionButton4Html = document.getElementById('optionButton4').innerHTML =  result[0].options[3].isValid 
 
+
+    pointingButton.addEventListener("click", function () {
+        const pointingBody = document.getElementById('pointingValue').innerHTML = score 
     })
 })
-//     optionButton1Html.addEventListener("click", function () {
-
-//     fetch("./questions.json")
-//     .then((response) => response.json())
-//     .then((json) => {
-
-//     const completeFile2 = json;
-//     const result2 = completeFile2.filter((dados) => {
-//         if(dados[0].options[0].isValid === true){
-//             return ('ok') 
-//         } else {
-//             return ('nop')
-//         }
-//     })
-//     })
-//     })
+})
     </script>
 </html>
