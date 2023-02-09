@@ -132,6 +132,14 @@ body {
     border: double 4px var(--color-border);
 }
 
+.random button {
+    border-radius: 50px;
+    margin-top: 25px;
+    padding: 8px;
+    background-color: #acb5dd;
+    border: inset 1px var(--color-pesquisa);
+}
+
 .img1 img {
     position: absolute;
     bottom: 500px;

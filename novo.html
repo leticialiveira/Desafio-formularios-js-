@@ -44,19 +44,24 @@
             <p id="pointing"> Verifique a sua pontuação : </p> <button id="pointingButton"> verificar </button>
             <span id="pointingValue"> </span>
         </div>
+        <div class="random">
+            <button id="randomButton"> Aleatório </button>
+            <span id="randomValue"></span>
+        </div>
     </div>
-    <div class="img1">
-        <img src="./midias/icons8-apple-arcade-50.png" alt="">
+    <!-- <div class="img1">
+        <img src="./assets/icons8-apple-arcade-50.png" alt="">
     </div>
     <div class="img2">
-        <img src="./midias/icons8-controle-50.png" alt="">
+        <img src="./assets/icons8-controle-50.png" alt="">
     </div>
     <div class="img3">
-        <img src="./midias/icons8-jogando-50.png" alt="">
+        <img src="./assets/icons8-jogando-50.png" alt="">
     </div>
     <div class="img4">
-        <img src="./midias/icons8-joystick-50.png" alt="">
-    </div>
+        <img src="./assets/icons8-joystick-50.png" alt="">
+    </div> -->
+
 
 </body>
 
@@ -77,7 +82,7 @@
         .then((json) => {
             
             const completeFile = json;
-            const result = completeFile.filter((item) => {
+            let result = completeFile.filter((item) => {
                 return ( 
                     item.title.toUpperCase('').includes(titleBody.value.toUpperCase('')) &&
                     item.description.toUpperCase('').includes(descriptionBody.value.toUpperCase('')) 
@@ -174,6 +179,15 @@
     pointingButton.addEventListener("click", function () {
         const pointingBody = document.getElementById('pointingValue').innerHTML = score 
     })
+
+    // const randomButtonBody = document.getElementById('randomValue')
+    randomButton.addEventListener("click", function () {
+        let mds = (completeFile[0].title).length
+        let test = completeFile[0].title[Math.floor(Math.random() * mds)]
+        console.log(test);
+        const listRandom = document.getElementById('randomValue').innerHTML = test
+        })
+    
 })
 })
     </script>
