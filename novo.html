@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./questions.json"></script>
     <link rel="stylesheet" href="./style/style.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./assets/icons8-controle-50.ico" type="image/x-icon">
+    <title>Questionário</title>
 </head>
 <body>
     <div class="main">
@@ -16,11 +17,16 @@
             <label class="title"> Pergunta:
                 <input type="text" id="title">
             </label>
-        
+
             <label class="description">  Descrição da  pergunta:
                 <input type="text" id="description">
             </label>
-            <button id="submitButton"> pesquisar</button>
+
+            <div class="buttons">
+                <button id="submitButton"> pesquisar</button>
+                <p>OU</p>
+                <button id="randomButton"> aleatório </button>
+            </div>
         </div>
 
         <div class="response">
@@ -37,19 +43,15 @@
                 
                 <p id="option4"> D) Jogo 4</p> <button id="optionButton4"> verificar</button>
                 <span id="optionValid4"></span>
-
             </label>
         </div>
+
         <div class="checkScore">
             <p id="pointing"> Verifique a sua pontuação : </p> <button id="pointingButton"> verificar </button>
             <span id="pointingValue"> </span>
         </div>
-        <div class="random">
-            <button id="randomButton"> Aleatório </button>
-            <span id="randomValue"></span>
-        </div>
     </div>
-    <!-- <div class="img1">
+    <div class="img1">
         <img src="./assets/icons8-apple-arcade-50.png" alt="">
     </div>
     <div class="img2">
@@ -60,8 +62,7 @@
     </div>
     <div class="img4">
         <img src="./assets/icons8-joystick-50.png" alt="">
-    </div> -->
-
+    </div>
 
 </body>
 
@@ -91,49 +92,50 @@
     
     const totalResult = document.getElementById('resultBody').innerHTML = 'Pergunta :  ' + result[0].title + '</br>'+
     'Descrição da pergunta :  ' + result[0].description
+
+    let score = 0
     
     const optionName1 = document.getElementById('option1').innerHTML = 'A)   ' + result[0].options[0].name  
     const optionIsValid1 = result[0].options[0].isValid
-    let score = 0
 
     optionButton1Html.addEventListener("click", function () {
+
         if(optionIsValid1 ){
                 const resultOption1 = document.getElementById('optionValid1').innerHTML = 'Essa é a opção correta!'
-            setTimeout(() => {
-                const resultOption1 = document.getElementById('optionValid1').innerHTML = ''
-                return score = score + 1
-            }, 1000)
+                score = score + 1
+                setTimeout(() => {
+                    const resultOption1 = document.getElementById('optionValid1').innerHTML = ''
+                }, 1000)
 
             } else {
                 const resultOption1 = document.getElementById('optionValid1').innerHTML = 'Essa é a opção errada, tente novamente!'
-            setTimeout(() => {
-                const resultOption1 = document.getElementById('optionValid1').innerHTML = ''
-                return score = score - 1
-            }, 1000)
+                score = score - 1
+                setTimeout(() => {
+                    const resultOption1 = document.getElementById('optionValid1').innerHTML = ''
+                }, 1000)
             }
     })
 
-    
     const optionName2 = document.getElementById('option2').innerHTML = 'B)   ' + result[0].options[1].name  
     const optionIsValid2 = result[0].options[1].isValid
     
     optionButton2Html.addEventListener("click", function () {
+
             if(optionIsValid2 ){
                 const resultOption2 = document.getElementById('optionValid2').innerHTML = 'Essa é a opção correta!'
-            setTimeout(() => {
-                const resultOption2 = document.getElementById('optionValid2').innerHTML = ''
-                return score = score + 1
+                score = score + 1
+                setTimeout(() => {
+                    const resultOption2 = document.getElementById('optionValid2').innerHTML = ''
             }, 1000)
 
             } else {
                 const resultOption2 = document.getElementById('optionValid2').innerHTML = 'Essa é a opção errada, tente novamente!'
-            setTimeout(() => {
-                const resultOption2 = document.getElementById('optionValid2').innerHTML = ''
-                return score = score - 1
-            }, 1000)
+                score = score - 1
+                setTimeout(() => {
+                    const resultOption2 = document.getElementById('optionValid2').innerHTML = ''
+                }, 1000)
             }
     })
-
 
     const optionName3 = document.getElementById('option3').innerHTML = 'C)   ' + result[0].options[2].name  
     const optionIsValid3 = result[0].options[2].isValid
@@ -141,17 +143,17 @@
     optionButton3Html.addEventListener("click", function () {
         if(optionIsValid3){
                 const resultOption3 = document.getElementById('optionValid3').innerHTML = 'Essa é a opção correta!'
-            setTimeout(() => {
-                const resultOption3 = document.getElementById('optionValid3').innerHTML = ''
-                return score = score + 1
-            }, 1000)
+                score = score + 1
+                setTimeout(() => {
+                    const resultOption3 = document.getElementById('optionValid3').innerHTML = ''
+                }, 1000)
 
             } else {
                 const resultOption3 = document.getElementById('optionValid3').innerHTML = 'Essa é a opção errada, tente novamente!'
-            setTimeout(() => {
-                const resultOption3 = document.getElementById('optionValid3').innerHTML = ''
-                return score = score - 1
-            }, 1000)
+                score = score - 1
+                setTimeout(() => {
+                    const resultOption3 = document.getElementById('optionValid3').innerHTML = ''
+                }, 1000)
             }
     })
 
@@ -159,36 +161,133 @@
     const optionIsValid4 =  result[0].options[3].isValid
     
     optionButton4Html.addEventListener("click", function () {
+
         if(optionIsValid4 ){
                 const resultOption4 = document.getElementById('optionValid4').innerHTML = 'Essa é a opção correta!'
-            setTimeout(() => {
-                const resultOption4 = document.getElementById('optionValid4').innerHTML = ''
-                return score = score + 1
-            }, 1000)
+                score = score + 1
+                setTimeout(() => {
+                    const resultOption4 = document.getElementById('optionValid4').innerHTML = ''
+                }, 1000)
 
             } else {
                 const resultOption4 = document.getElementById('optionValid4').innerHTML = 'Essa é a opção errada, tente novamente!'
-            setTimeout(() => {
-                const resultOption4 = document.getElementById('optionValid4').innerHTML = ''
-                return score = score - 1
-            }, 1000)
+                score = score - 1
+                setTimeout(() => {
+                    const resultOption4 = document.getElementById('optionValid4').innerHTML = ''
+                }, 1000)
             }
     })
-
 
     pointingButton.addEventListener("click", function () {
         const pointingBody = document.getElementById('pointingValue').innerHTML = score 
     })
-
-    // const randomButtonBody = document.getElementById('randomValue')
+    })
+})
     randomButton.addEventListener("click", function () {
-        let mds = (completeFile[0].title).length
-        let test = completeFile[0].title[Math.floor(Math.random() * mds)]
-        console.log(test);
-        const listRandom = document.getElementById('randomValue').innerHTML = test
+
+        fetch("./questions.json")
+        .then((response) => response.json())
+        .then((json) => {
+            
+        const completeFile2 = json
+        const completeRandom= completeFile2[Math.floor(Math.random() * completeFile2.length)]
+
+        const totalResult2 = document.getElementById('resultBody').innerHTML = 'Pergunta :  ' + completeRandom.title + '</br>'+
+        'Descrição da pergunta :  ' + completeRandom.description
+
+        let score = 0 
+
+        const optionNameRandom1 = document.getElementById('option1').innerHTML = 'A)   ' + completeRandom.options[0].name
+        const optionIsValidRandom1 = completeRandom.options[0].isValid
+
+        optionButton1Html.addEventListener("click", function () {
+
+            if(optionIsValidRandom1 ){
+                const resultOption1 = document.getElementById('optionValid1').innerHTML = 'Essa é a opção correta!'
+                score = score + 1
+                setTimeout(() => {
+                    const resultOption1 = document.getElementById('optionValid1').innerHTML = ''
+                },1000)
+                
+            } else {
+                const resultOption1 = document.getElementById('optionValid1').innerHTML = 'Essa é a opção errada, tente novamente!'
+                score = score - 1
+                setTimeout(() => {
+                    const resultOption1 = document.getElementById('optionValid1').innerHTML = ''
+                },1000)
+                
+            }
         })
-    
-})
-})
+
+        const optionNameRandom2 = document.getElementById('option2').innerHTML = 'B)   ' + completeRandom.options[1].name
+        const optionIsValidRandom2 = completeRandom.options[1].isValid
+        
+        optionButton2Html.addEventListener("click", function () {
+
+            if(optionIsValidRandom2 ){
+                const resultOption2 = document.getElementById('optionValid2').innerHTML = 'Essa é a opção correta!'
+                score = score + 1
+                setTimeout(() => {
+                    const resultOption2 = document.getElementById('optionValid2').innerHTML = ''
+                },1000)
+            } else {
+
+                const resultOption2 = document.getElementById('optionValid2').innerHTML = 'Essa é a opção errada, tente novamente!'
+                score = score - 1
+                setTimeout(() => {
+                    const resultOption2 = document.getElementById('optionValid2').innerHTML = ''
+                },1000)
+            }
+        })
+
+        const optionNameRandom3 = document.getElementById('option3').innerHTML = 'C)   ' + completeRandom.options[2].name
+        const optionIsValidRandom3 = completeRandom.options[2].isValid
+        
+        optionButton3Html.addEventListener("click", function () {
+
+            if(optionIsValidRandom3){
+                const resultOption3 = document.getElementById('optionValid3').innerHTML = 'Essa é a opção correta!'
+                score = score + 1
+                setTimeout(() => {
+                    const resultOption3 = document.getElementById('optionValid3').innerHTML = ''
+                },1000)
+
+            } else {
+                const resultOption3 = document.getElementById('optionValid3').innerHTML = 'Essa é a opção errada, tente novamente!'
+                score = score - 1
+                setTimeout(() => {
+                    const resultOption3 = document.getElementById('optionValid3').innerHTML = ''
+                },1000)
+            }
+        })
+        
+        const optionNameRandom4 = document.getElementById('option4').innerHTML = 'D)   ' + completeRandom.options[3].name
+        const optionIsValidRandom4 = completeRandom.options[3].isValid
+        
+        optionButton4Html.addEventListener("click", function () {
+
+            if(optionIsValidRandom4){
+                const resultOption4 = document.getElementById('optionValid4').innerHTML = 'Essa é a opção correta!'
+                score = score + 1
+                setTimeout(() => {
+                    const resultOption4 = document.getElementById('optionValid4').innerHTML = ''
+                },1000)
+
+            } else {
+                const resultOption4 = document.getElementById('optionValid4').innerHTML = 'Essa é a opção errada, tente novamente!'
+                score = score - 1
+                setTimeout(() => {
+                    const resultOption4 = document.getElementById('optionValid4').innerHTML = ''
+                },1000)
+            }
+        })
+
+        pointingButton.addEventListener("click", function () {
+        const pointingBody = document.getElementById('pointingValue').innerHTML = score 
+    })
+        }) 
+    })
+
+   
     </script>
 </html>

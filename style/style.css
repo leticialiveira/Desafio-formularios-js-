@@ -82,6 +82,7 @@ body {
 .title-description input {
     padding-right: 80px;
 }
+
 .title-description .description {
     display: flex;
     align-items: center;
@@ -92,9 +93,21 @@ body {
     
 }
 
-.title-description button{
-    border: double 4px var(--color-border);
-    
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    font-family: 'Ubuntu Mono', monospace;
+
+}
+
+.buttons  button{
+    border-radius: 50px;
+    padding: 8px;
+    background-color: #acb5dd;
+    border: inset 1px var(--color-pesquisa);
 }
 
 .response{
@@ -132,35 +145,31 @@ body {
     border: double 4px var(--color-border);
 }
 
-.random button {
-    border-radius: 50px;
-    margin-top: 25px;
-    padding: 8px;
-    background-color: #acb5dd;
-    border: inset 1px var(--color-pesquisa);
-}
 
 .img1 img {
     position: absolute;
-    bottom: 500px;
+    bottom: 550px;
     right: 750px;
-    /* transform: translate(0, 0, -500px, -750) */
-    /* # top, left, bottom, right */
+    transform: translate(0, 0, 550px, 750px)
 }
+
 .img2 img {
     position: absolute;
-    bottom: 600px;
+    bottom: 620px;
     right: 750px;
+    transform: translate(0px, 0px, 620px,750px);
 }
 
 .img3 img {
     position: absolute;
-    bottom: 592px;
+    bottom: 610px;
     left: 750px;
+    transform: translate(0px, 0px, 610px,750px);
 }
 
 .img4 img {
     position: absolute;
     left: 750px;
-    bottom: 505px;
+    bottom: 550px;
+    transform: translate(0px, 0px, 550px,750px);
 }
